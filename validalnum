@@ -2,7 +2,7 @@
 
 validAlphaNum()
 {
-  validchars="$(echo $1 | sed -e 's/[^{:alnum:}]/g')"
+  validchars="$(echo $1 | sed -e 's/[^[:alnum:]]//g')"
 
   if [ "$validchars" = "$1" ] ; then
     return 0
