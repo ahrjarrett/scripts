@@ -1,5 +1,0 @@
-#!/bin/bash
-echo "helo wrld"
-echo $(which neqn)
-cat $(which neqn)
-

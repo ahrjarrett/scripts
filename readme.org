@@ -1,0 +1,27 @@
+#+TITLE: scripts
+#+AUTHOR: Andrew Jarrett
+#+EMAIL:ahrjarrett@gmail.com
+#+DATE: 04/14/2019
+
+
+
+* Bootstrap 
+
+Bootstrap is a script that sets up a new Mac for software development.
+
+** Issues:
+
+1. <2019-04-14 Sun>
+
+When configuring fish, Oh My Fish gets excited and launches the fish shell in the middle of configuration, interrupting the process. 
+
+This doesn't break anything, you just have to run the bootstrap script again (skip the SSH and Homebrew steps, if not all the ones you already ran).
+
+2. If ~fzf~ doesn't work right away after configuring fish, try making sure Oh My Fish is up to date and on the ~dev~ channel by doing:
+
+   ~$ omf channel dev~
+   ~$ omf update~
+   
+   You'll know it's working if you can hit =^+R= or =^+F= to search through history, or find a file.
+
+
