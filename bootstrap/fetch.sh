@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "Fetching dotfiles from remote $DOTFILES_REMOTE..."
 git clone "https://github.com/$GH_USERNAME/$DOTFILES_REPONAME" "$DOTFILES_LOCAL"

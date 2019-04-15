@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ruby_packages=(
   rails
 )
 
-# we init rbenv in init.fish, we need to do it 
+# we init rbenv in init.fish, we need to do it
 # the first time too bc fish config might not have loaded yet
 eval "$(rbenv init -)"
 echo "Installing Ruby version $USER_RUBY_VERSION..."

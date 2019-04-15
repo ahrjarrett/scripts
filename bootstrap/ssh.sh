@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 PATH_TO_GH_KEY="$HOME/.ssh/github"
 SSH_CONFIG_FILE="$HOME/.ssh/config"

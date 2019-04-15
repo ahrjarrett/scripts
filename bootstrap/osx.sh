@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DEFAULT_DESKTOP=$PROJECTS_DIR/dotfiles/.exclude/DesktopDefault.jpg
 

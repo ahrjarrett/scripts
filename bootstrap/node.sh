@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 node_packages=(
   n
