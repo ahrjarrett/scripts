@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ruby_packages=(
   rails
 )

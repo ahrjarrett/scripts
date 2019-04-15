@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+ENTRY=${PWD##*/}
 
-ROOT=$PWD
 ### BOOTSTRAP NEW MAC ###
 export EMAIL="ahrjarrett@gmail.com"
 export WEBSITE="https://ahrjarrett.com"
@@ -28,10 +28,16 @@ givesPermission() {
 }
 
 init() {
+  if [[("$ENTRY" = "scripts") ]] ; then
+    echo "Entering bootstrap folder..."
+    cd "bootstrap"
+    else $ENTRY > /dev/null 2>&1
+  fi
+
   echo "Bootstrapping your Mac..."
   echo "\nThis utility makes a projects folder at $PROJECTS_PATH if it doesn't already exist"
   if givesPermission; then
-    ECHO "CREATING PROJECTS FOLDER AT $PROJECTS_PATH..."
+    ECHO "Creating projects folder... $PROJECTS_PATH"
     mkdir -p "$PROJECTS_PATH"
   else
     echo "Well, I guess we won't do that then."
@@ -49,20 +55,10 @@ generate_ssh() {
 }
 
 fetch_repos() {
-  echo "\nThis utility clones your config files"
+  echo "\nThis utility fetches your config files"
   if givesPermission; then
-    echo "Fetching dotfiles from remote $DOTFILES_REMOTE..."
-    git clone "https://github.com/$GH_USERNAME/$DOTFILES_REPONAME" "$DOTFILES_LOCAL"
-    echo "Creating a symlink for .ssh/config file..."
-    ln -sv "$DOTFILES_LOCAL/ssh_config" "$HOME/.ssh/config"
-    echo "Linked $DOTFILES_LOCAL/ssh_config <- $HOME/.ssh/config"
-
-    git clone "$DOTFILES_REMOTE" "$DOTFILES_LOCAL"
-    echo "Fetching fish config from remote: $FISH_REMOTE..."
-    git clone "$FISH_REMOTE" "$FISH_LOCAL"
-    echo "Symlinking..."
-    ln -sv "$FISH_LOCAL" "$DOTFILES_LOCAL/.config/omf"
-    echo "Linked $FISH_LOCAL <- /ssh_config <- $DOTFILES_LOCAL/.config/omf"
+    echo "Fetching repos..."
+    sh fetch.sh
   else
     echo "Fetch repos utility cancelled by user"
   fi
@@ -72,11 +68,7 @@ fetch_repos() {
 link() {
 	echo "\nThis utility symlinks the files in $DOTFILES_LOCAL to $HOME"
   if givesPermission; then
-    echo "Navigating to $DOTFILES_LOCAL..."
-    # cd "$DOTFILES_LOCAL"
     sh link.sh
-    # echo "Navigating back to $ROOT..."
-    # cd "$ROOT"
   else
     echo "Symlinking cancelled by user"
   fi
@@ -133,11 +125,14 @@ setup_node() {
 }
 
 init
-generate_ssh
-fetch_repos
-link
-brew_install
-configure_shell
-osx_defaults
-setup_ruby
-setup_node
+# generate_ssh
+# fetch_repos
+# link
+# brew_install
+# configure_shell
+# osx_defaults
+# setup_ruby
+# setup_node
+
+cd ".." # back to scripts directory
+echo "Bootstrap complete ->> 🥨 ->> Restart your computer!"

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 node_packages=(
   n
   nodemon

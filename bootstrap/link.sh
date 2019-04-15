@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 EXCLUDED_FILES="ssh_config|scripts|\.exclude|\.DS_Store|\.git$|\.gitignore$|.*.md$|.*.org$"
 
