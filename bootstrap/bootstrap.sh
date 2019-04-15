@@ -125,14 +125,15 @@ setup_node() {
 }
 
 init
-# generate_ssh
-# fetch_repos
-# link
-# brew_install
-# configure_shell
-# osx_defaults
-# setup_ruby
-# setup_node
+generate_ssh
+fetch_repos
+link
+brew_install
+configure_shell
+osx_defaults
+setup_ruby
+setup_node
 
-cd ".." # back to scripts directory
-echo "Bootstrap complete ->> 🥨 ->> Restart your computer!"
+cd ".." # go back to scripts directory
+echo "\n✨ Bootstrap script complete ✨"
+echo "    Don’t forget to reboot!\n"
