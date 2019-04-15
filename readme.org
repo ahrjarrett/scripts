@@ -74,15 +74,18 @@ See the [[https://github.com/ahrjarrett/dotfiles#postinstall-checklist][Postinst
 
 *** TODO Known Issues:
 
-<2019-04-14 Sun>
+*TODO:* oh-my-fish gets excited sometimes and interrupts
 
-TODO A: When configuring fish, Oh My Fish gets excited and launches the fish shell in the middle of configuration, interrupting the process. 
+When configuring fish, OMF launches the fish shell in the middle of configuration, interrupting the process. 
 
-This doesn't break anything, you just have to run the bootstrap script again (skip the SSH and Homebrew steps, if not all the ones you already ran).
+This doesn't break anything, you just have to run the bootstrap script again (I’d skip the SSH and Homebrew steps the 2nd time).
 
-TODO B: If ~fzf~ doesn't work right away after configuring fish, try making sure Oh My Fish is up to date and on the ~dev~ channel by doing:
+*TODO:* fix fzf being fishy.
+
+If ~fzf~ doesn't work right away after configuring fish, try making sure Oh My Fish is up to date and on the ~dev~ channel by doing:
 
    ~$ omf channel dev~
+   
    ~$ omf update~
    
    You'll know it's working if you can hit =^+R= or =^+F= to search through history, or find a file.
