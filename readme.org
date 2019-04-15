@@ -3,13 +3,76 @@
 #+EMAIL:ahrjarrett@gmail.com
 #+DATE: 04/14/2019
 
+My scripts for bootstrapping a dev environment on a fresh macOS installation.
+
+- New machine? Read the [[https://github.com/ahrjarrett/scripts#installation][Instructions]]
+- Looking for my dotfiles? [[https://github.com/ahrjarrett/dotfiles][Here they are]].
+- About to reformat? See the [[https://github.com/ahrjarrett/scripts/blob/master/preflight.org][Preflight Checklist]]
+- Looking for more? Check out the [[https://github.com/ahrjarrett/scripts#postinstall-checklist][Postinstall Checklist]]
+
+* What it sets up
+
+OS X Defaults:
+- *Important:* Read the [[https://github.com/ahrjarrett/scripts/blob/master/scripts/bootstrap/osx.sh][coments in the OS X defaults file!]] Decide for yourself which parts you want done
+
+Tools:
+- [[https://brew.sh/][Homebrew]] for managing operating system libraries
+- [[https://github.com/ggreer/the_silver_searcher][The Silver Searcher]] for finding things in files
+- [[https://github.com/fish-shell/fish-shell][fish]] as your shell
+- [[https://github.com/jorgebucaran/fisher][fisherman]] as your shell’s package manager
+- [[https://httpie.org/][HTTPie]] as a command line client for making REST requests
+
+Apps:
+- See the [[https://github.com/ahrjarrett/scripts#installed-os-x-apps][list of applications]] installed by this script
+
+Languages:
+- [[https://docs.python.org/3/][Python 3]]
+- [[https://nodejs.org][Node.js]], [[https://npmjs.com][npm]] and [[https://yarnpkg.com/en/][Yarn]] for running apps and installing JavaScript packages
+- [[https://www.ruby-lang.org/en/][Ruby]] stable and [[https://github.com/rbenv/rbenv][rbenv]] for writing general-purpose code
+- [[https://www.postgresql.org/][Postgres]] and [[https://www.mysql.com/][MySQL]] for relational data
+
+Sane OS X Defaults:
+- Check out the [[https://github.com/ahrjarrett/dotfiles/blob/master/scripts/osx.sh][osx_defaults]] script for defaults documentation
 
 
-* Bootstrap 
 
-Bootstrap is a script that sets up a new Mac for software development.
+* Installation
 
-** Issues:
+1. Clone this repo anywhere on your machine
+2. /Read the scripts/! ~osx.sh~ in particular does a lot of opinonated stuff to your machine
+3. When you’re ready run ~sh bootstrap.exclude.sh~
+
+That’s it! 
+
+
+* How it works
+
+*** Symlinks
+
+Upon bootstrap, this script generates an SSH key and uses it to install my [[https://github.com/ahrjarrett/dotfiles][dotfiles]] repo.
+
+If you're using your own dotfiles, be warned that this script will symlink /every file and folder you have in there/ to your home directory, *unless*:
+
+1. It’s an ~.org~ or ~.md~ file (documentation)
+2. It lives inside the ~.excludes/~ directory (files you can install manually go here)
+3. It’s something you’d probably add to a ~/.gitignore~ file (for example ~/.DS_Store~)
+
+See [[https://github.com/ahrjarrett/scripts/blob/master/bootstrap/link.sh#L3][excluded files regex]] to alter this behavior.
+
+*** Brew install
+
+Homebrew installs a bunch of packages and applications for you.
+
+See [[https://github.com/ahrjarrett/dotfiles/blob/master/scripts/brew.sh][brew.sh]] to change what will be installed. Note that *Cask will force app installs*.
+
+Meaning if an app already exists in your Applications folder, _it will be removed and reinstalled_. This will ensure you get the latest version, but might also lose that app’s config.
+
+*** Debugging
+
+See the [[https://github.com/ahrjarrett/dotfiles#postinstall-checklist][Postinstall Checklist]] if something goes wrong (or if you’re looking to do more advanced config).
+
+
+*** TODO Known Issues:
 
 1. <2019-04-14 Sun>
 
