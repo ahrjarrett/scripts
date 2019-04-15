@@ -74,13 +74,13 @@ See the [[https://github.com/ahrjarrett/dotfiles#postinstall-checklist][Postinst
 
 *** TODO Known Issues:
 
-1. <2019-04-14 Sun>
+<2019-04-14 Sun>
 
-When configuring fish, Oh My Fish gets excited and launches the fish shell in the middle of configuration, interrupting the process. 
+TODO A: When configuring fish, Oh My Fish gets excited and launches the fish shell in the middle of configuration, interrupting the process. 
 
 This doesn't break anything, you just have to run the bootstrap script again (skip the SSH and Homebrew steps, if not all the ones you already ran).
 
-2. If ~fzf~ doesn't work right away after configuring fish, try making sure Oh My Fish is up to date and on the ~dev~ channel by doing:
+TODO B: If ~fzf~ doesn't work right away after configuring fish, try making sure Oh My Fish is up to date and on the ~dev~ channel by doing:
 
    ~$ omf channel dev~
    ~$ omf update~
