@@ -53,6 +53,7 @@ gui_apps=(
   dropbox
   emacs
   google-chrome
+  iterm2
   keycastr
   slack
   sequel-pro
@@ -64,7 +65,7 @@ gui_apps=(
   sketch
 )
 echo "Installing apps with Cask..."
-# brew cask install --force --appdir="/Applications" ${gui_apps[@]}
+brew cask install --force --appdir="/Applications" ${gui_apps[@]}
 
 #################################################
 ### FONTS
