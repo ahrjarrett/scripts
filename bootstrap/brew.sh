@@ -31,12 +31,20 @@ brew install node
 brew install tree
 brew install heroku
 brew install yarn
-brew install docker
 brew install httpie
 brew install openssl
 brew install readline
 brew install the_silver_searcher
 brew install fzf
+brew install neovim
+brew install bat
+# marketplace dependencies
+brew install awscli
+brew install docker
+brew install docker-compose
+brew install docker-machine
+brew install go
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #################################################
 ### DBs
@@ -65,7 +73,7 @@ gui_apps=(
   sketch
 )
 echo "Installing apps with Cask..."
-brew cask install --force --appdir="/Applications" ${gui_apps[@]}
+#brew cask install --force --appdir="/Applications" ${gui_apps[@]}
 
 #################################################
 ### FONTS
