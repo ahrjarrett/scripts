@@ -12,42 +12,39 @@ My scripts for bootstrapping a dev environment on a fresh macOS installation.
 
 * What it sets up
 
-OS X Defaults:
-- *Important:* Read the [[https://github.com/ahrjarrett/scripts/blob/master/scripts/bootstrap/osx.sh][coments in the OS X defaults file!]] Decide for yourself which parts you want done
+Somewhat Sane Defaults:
+- The [[https://github.com/ahrjarrett/scripts/blob/master/bootstrap/osx.sh][OS X defaults file]] is heavily commented so you can take out the parts you don’t think you’ll want
 
 Tools:
 - [[https://brew.sh/][Homebrew]] for managing operating system libraries
 - [[https://github.com/ggreer/the_silver_searcher][The Silver Searcher]] for finding things in files
-- [[https://github.com/fish-shell/fish-shell][fish]] as your shell
-- [[https://github.com/jorgebucaran/fisher][fisherman]] as your shell’s package manager
-- [[https://httpie.org/][HTTPie]] as a command line client for making REST requests
+- [[https://github.com/junegunn/fzf][fzf]] for finding files in things
+- [[https://github.com/fish-shell/fish-shell][🍣 fish ]] on the command-line 
+- [[https://github.com/oh-my-fish/oh-my-fish][oh-my-fish]] as your shell package manager
+- [[https://httpie.org/][HTTPie]] for making REST requests from the command-line
 
 Apps:
-- See the [[https://github.com/ahrjarrett/scripts#installed-os-x-apps][list of applications]] installed by this script
+- See out the [[https://github.com/ahrjarrett/scripts#installed-os-x-apps][full list of apps]] this script installs
 
 Languages:
 - [[https://docs.python.org/3/][Python 3]]
-- [[https://nodejs.org][Node.js]], [[https://npmjs.com][npm]] and [[https://yarnpkg.com/en/][Yarn]] for running apps and installing JavaScript packages
-- [[https://www.ruby-lang.org/en/][Ruby]] stable and [[https://github.com/rbenv/rbenv][rbenv]] for writing general-purpose code
-- [[https://www.postgresql.org/][Postgres]] and [[https://www.mysql.com/][MySQL]] for relational data
-
-Sane OS X Defaults:
-- Check out the [[https://github.com/ahrjarrett/dotfiles/blob/master/scripts/osx.sh][osx_defaults]] script for defaults documentation
+- [[https://nodejs.org][Node.js]], [[https://npmjs.com][npm]] & [[https://yarnpkg.com/en/][Yarn]] for running apps and installing JavaScript packages
+- [[https://www.ruby-lang.org/en/][Ruby stable]], [[https://github.com/rbenv/rbenv][rbenv]] & [[https://rubygems.org/gems/rails/][Rails]] for web apps & general purpose programming
+- [[https://www.postgresql.org/][Postgres]] & [[https://www.mysql.com/][MySQL]] for relational data stores
 
 
-
-* Installation
+* Install
 
 1. Clone this repo anywhere on your machine
 2. /Read the scripts/! ~osx.sh~ in particular does a lot of opinonated stuff to your machine
-3. When you’re ready run ~sh bootstrap.exclude.sh~
+3. Run ~sh bootstrap/bootstrap.sh~
 
-That’s it! 
+That’s it! Altogether it takes around 20 minutes.
 
 
 * How it works
 
-*** Symlinks
+** Symlinks
 
 Upon bootstrap, this script generates an SSH key and uses it to install my [[https://github.com/ahrjarrett/dotfiles][dotfiles]] repo.
 
@@ -59,7 +56,7 @@ If you're using your own dotfiles, be warned that this script will symlink /ever
 
 See [[https://github.com/ahrjarrett/scripts/blob/master/bootstrap/link.sh#L3][excluded files regex]] to alter this behavior.
 
-*** Brew install
+** Brew install
 
 Homebrew installs a bunch of packages and applications for you.
 
@@ -67,24 +64,25 @@ See [[https://github.com/ahrjarrett/dotfiles/blob/master/scripts/brew.sh][brew.s
 
 Meaning if an app already exists in your Applications folder, _it will be removed and reinstalled_. This will ensure you get the latest version, but might also lose that app’s config.
 
-*** Debugging
+** Debugging
 
 See the [[https://github.com/ahrjarrett/dotfiles#postinstall-checklist][Postinstall Checklist]] if something goes wrong (or if you’re looking to do more advanced config).
 
 
-*** TODO Known Issues:
+** TODO Known Issues:
 
-<2019-04-14 Sun>
+*TODO:* oh-my-fish gets excited sometimes and interrupts
 
-TODO A: When configuring fish, Oh My Fish gets excited and launches the fish shell in the middle of configuration, interrupting the process. 
+During shell configuration, sometimes OMF will decide to launch fish, interrupting the process.
 
-This doesn't break anything, you just have to run the bootstrap script again (skip the SSH and Homebrew steps, if not all the ones you already ran).
+This doesn't break anything, you just have to run the bootstrap script again (I’d skip the SSH and Homebrew steps the 2nd time around).
 
-TODO B: If ~fzf~ doesn't work right away after configuring fish, try making sure Oh My Fish is up to date and on the ~dev~ channel by doing:
+*TODO:* fix fzf being fishy.
+
+If ~fzf~ doesn't work right away after configuring fish, try making sure Oh My Fish is up to date and on the ~dev~ channel by doing:
 
    ~$ omf channel dev~
+   
    ~$ omf update~
    
-   You'll know it's working if you can hit =^+R= or =^+F= to search through history, or find a file.
-
-
+You'll know it's working if you can hit =^+R= or =^+F= to search through history, or find a file.
