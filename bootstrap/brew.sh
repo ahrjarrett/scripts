@@ -44,6 +44,7 @@ brew install docker
 brew install docker-compose
 brew install docker-machine
 brew install go
+brew install elasticsearch@5.6
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #################################################

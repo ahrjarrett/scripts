@@ -4,6 +4,7 @@ node_packages=(
   n
   nodemon
   create-react-app
+  typescript
   prettier
 )
 
