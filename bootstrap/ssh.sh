@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PATH_TO_GH_KEY="$HOME/.ssh/github"
+PATH_TO_GH_KEY="$HOME/.ssh/github_rsa"
 SSH_CONFIG_FILE="$HOME/.ssh/config"
 
 generate_github_ssh () {
@@ -8,7 +8,7 @@ generate_github_ssh () {
   printf "\e[36m  $PATH_TO_GH_KEY  \e[0m\n"
 
   echo "Generating GitHub SSH key..."
-  echo "Using default key name (github)..."
+  echo "Using default key name (github_rsa)..."
   echo "Adding key location to $SSH_CONFIG_FILE..."
   printf "\n\e[32m$PATH_TO_GH_KEY\e[0m copied to your clipboard \n\n"
 
