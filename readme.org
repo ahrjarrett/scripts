@@ -13,7 +13,7 @@ My scripts for bootstrapping a dev environment on a fresh macOS installation.
 * What it sets up
 
 Somewhat Sane Defaults:
-- The [[https://github.com/ahrjarrett/scripts/blob/master/bootstrap/osx.sh][OS X defaults file]] is heavily commented so you can take out the parts you don’t think you’ll want
+- The [[https://github.com/ahrjarrett/scripts/blob/master/bootstrap/osx.sh][OS X defaults file]] is heavily commented so you can take out the parts you don’t want
 
 Tools:
 - [[https://brew.sh/][Homebrew]] for managing operating system libraries
