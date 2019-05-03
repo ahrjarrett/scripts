@@ -1,0 +1,6 @@
+IFS=':' read -ra PATHARRAY <<< "$PATH"
+
+for path in "${PATHARRAY[@]}"; do
+  echo $path
+done
+
