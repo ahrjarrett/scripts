@@ -115,6 +115,7 @@ sudo pmset -a standbydelay 86400
 sudo pmset -a hibernatemode 0
 
 # TODO: Find bash command to turn off floating thumbnail for screenshots (slows them down so much ughh)
+# Disable manually: https://www.macobserver.com/tips/quick-tip/macos-mojave-screenshot/
 #defaults write ...
 
 
