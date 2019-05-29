@@ -260,3 +260,11 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 for app in Safari Finder Dock SystemUIServer; do
   killall "$app" >/dev/null 2>&1
 done
+
+
+#################################################
+### ITERM2
+#################################################
+
+defaults write com.googlecode.iterm2 OptimumTabWidth -int 400
+
