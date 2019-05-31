@@ -1,2 +1,300 @@
 #TAG,NAME IN REPO/GIT URL,PURPOSE
 
+,alsa-utils,
+,amazon-ecr-credential-helper,
+,arandr,
+,autoconf,
+,automake,
+,bash,
+,binutils,
+,bison,
+,bzip2,
+,coreutils,
+,cryptsetup,
+,alsa-utils,
+,amazon-ecr-credential-helper,
+,arandr,
+,autoconf,
+,automake,
+,bash,
+,binutils,
+,bison,
+,bzip2,
+,coreutils,
+,cryptsetup,
+,device-mapper,
+,dhcpcd,
+,dialog,
+,diffutils,
+,dmenu,
+,dmidecode,
+,dnsmasq,
+,docker,
+,docker-compose,
+,docker-machine,
+,docker-machine-driver-kvm2,
+,e2fsprogs,
+,ebtables,
+,fakeroot,
+,feh,
+,file,
+,filesystem,
+,findutils,
+,firefox,
+,fish,
+,flex,
+,gawk,
+,gcc,
+,gcc-libs,
+,gettext,
+,git,
+,glibc,
+,gnu-netcat,
+,grep,
+,groff,
+,gzip,
+,htop,
+,i3-gaps,
+,i3blocks,
+,i3lock,
+,i3status,
+,inetutils,
+,intel-ucode,
+,iproute2,
+,iputils,
+,jfsutils,
+,kubectl-bin,
+,kustomize-bin,
+,less,
+,libmysqlclient56,
+,libtool,
+,libva,
+,libva-intel-driver,
+,libvirt,
+,licenses,
+,light-git,
+,linux,
+,linux-firmware,
+,logrotate,
+,lvm2,
+,m4,
+,make,
+,man-db,
+,man-pages,
+,mdadm,
+,minikube-bin,
+,mkcert,
+,mysql-clients56,
+,mysql56,
+,nano,
+,nemo,
+,neovim,
+,netctl,
+,network-manager-applet,
+,networkmanager,
+,nodejs,
+,npm,
+,openssh,
+,package-query,
+,pacman,
+,patch,
+,pciutils,
+,perl,
+,pkgconf,
+,procps-ng,
+,psmisc,
+,pv,
+,python-pip,
+,qemu-headless,
+,reiserfsprogs,
+,ruby,
+,ruby-irb,
+,rxvt-unicode,
+,s-nail,
+,sed,
+,shadow,
+,sudo,
+,sxhkd,
+,sysfsutils,
+,systemd,
+,systemd-sysvcompat,
+,tar,
+,terminator,
+,texinfo,
+,the_silver_searcher,
+,tlp,
+,tmux,
+,tree,
+,usbutils,
+,util-linux,
+,vi,
+,vim,
+,which,
+,xclip,
+,xf86-video-intel,
+,xf86-video-nouveau,
+,xfsprogs,
+,xorg-server,
+,xorg-twm,
+,xorg-xclock,
+,xorg-xdpyinfo,
+,xorg-xev,
+,xorg-xinit,
+,xorg-xprop,
+,xorg-xrandr,
+,xterm,
+,yaourt,
+,yay,
+,zathura,
+,zathura-pdf-mupdf,
+
+
+### PACMAN
+#,alsa-utils 1.1.9-1
+#,amazon-ecr-credential-helper 0.3.0-2
+#,arandr 0.1.10-3
+#,autoconf 2.69-5
+#,automake 1.16.1-1
+#,bash 5.0.007-1
+#,binutils 2.32-1
+#,bison 3.3.2-1
+#,bzip2 1.0.6-8
+#,coreutils 8.31-1
+#,cryptsetup 2.1.0
+#,alsa-utils 1.1.9-1
+#,amazon-ecr-credential-helper 0.3.0-2
+#,arandr 0.1.10-3
+#,autoconf 2.69-5
+#,automake 1.16.1-1
+#,bash 5.0.007-1
+#,binutils 2.32-1
+#,bison 3.3.2-1
+#,bzip2 1.0.6-8
+#,coreutils 8.31-1
+#,cryptsetup 2.1.0-1
+#,device-mapper 2.02.184-4
+#,dhcpcd 7.2.1-1
+#,dialog 1:1.3_20190211-1
+#,diffutils 3.7-1
+#,dmenu 4.9-1
+#,dmidecode 3.2-1
+#,dnsmasq 2.80-3
+#,docker 1:18.09.6-1
+#,docker-compose 1.24.0-1
+#,docker-machine 0.16.1-2
+#,docker-machine-driver-kvm2 1.1.0-2
+#,e2fsprogs 1.45.1-1
+#,ebtables 2.0.10_4-7
+#,fakeroot 1.23-1
+#,feh 3.1.3-1
+#,file 5.37-1
+#,filesystem 2019.05-2
+#,findutils 4.6.0-4
+#,firefox 67.0-1
+#,fish 3.0.2-1
+#,flex 2.6.4-2
+#,gawk 4.2.1-2
+#,gcc 8.3.0-1
+#,gcc-libs 8.3.0-1
+#,gettext 0.19.8.1-3
+#,git 2.21.0-1
+#,glibc 2.29-1
+#,gnu-netcat 0.7.1-7
+#,grep 3.3-1
+#,groff 1.22.4-1
+#,gzip 1.10-1
+#,htop 2.2.0-2
+#,i3-gaps 4.16.1-1
+#,i3blocks 1.4-6
+#,i3lock 2.11.1-1
+#,i3status 2.12-2
+#,inetutils 1.9.4-7
+#,intel-ucode 20190514.a-1
+#,iproute2 5.1.0-1
+#,iputils 20180629.f6aac8d-4
+#,jfsutils 1.1.15-6
+#,kubectl-bin 1.14.2-1
+#,kustomize-bin 2.0.3-1
+#,less 530-1
+#,libmysqlclient56 5.6.43-1
+#,libtool 2.4.6+42+gb88cebd5-3
+#,libva 2.4.1-1
+#,libva-intel-driver 2.3.0-2
+#,libvirt 5.3.0-1
+#,licenses 20181104-1
+#,light-git 1.2.r18.g215dbcd-1
+#,linux 5.1.5.arch1-2
+#,linux-firmware 20190514.711d329-1
+#,logrotate 3.15.0-1
+#,lvm2 2.02.184-4
+#,m4 1.4.18-2
+#,make 4.2.1-3
+#,man-db 2.8.5-2
+#,man-pages 5.01-1
+#,mdadm 4.1-1
+#,minikube-bin 1.1.0-1
+#,mkcert 1.3.0-1
+#,mysql-clients56 5.6.43-1
+#,mysql56 5.6.43-1
+#,nano 4.2-1
+#,nemo 4.0.6-2
+#,neovim 0.3.7-1
+#,netctl 1.20-1
+#,network-manager-applet 1.8.22-1
+#,networkmanager 1.18.0-1
+#,nodejs 11.15.0-1
+#,npm 6.9.0-1
+#,openssh 8.0p1-1
+#,package-query 1.9-3
+#,pacman 5.1.3-1
+#,patch 2.7.6-7
+#,pciutils 3.6.2-1
+#,perl 5.28.2-1
+#,pkgconf 1.6.1-1
+#,procps-ng 3.3.15-1
+#,psmisc 23.2-1
+#,pv 1.6.6-2
+#,python-pip 19.0.3-1
+#,qemu-headless 4.0.0-2
+#,reiserfsprogs 3.6.27-2
+#,ruby 2.6.3-1
+#,ruby-irb 1.0.0-1
+#,rxvt-unicode 9.22-7
+#,s-nail 14.9.13-2
+#,sed 4.7-1
+#,shadow 4.6-3
+#,sudo 1.8.27-1
+#,sxhkd 0.6.0-1
+#,sysfsutils 2.1.0-10
+#,systemd 242.29-1
+#,systemd-sysvcompat 242.29-1
+#,tar 1.32-1
+#,terminator 1.91-6
+#,texinfo 6.6-1
+#,the_silver_searcher 2.2.0-1
+#,tlp 1.2.2-1
+#,tmux 2.9_a-2
+#,tree 1.8.0-1
+#,usbutils 010-1
+#,util-linux 2.33.2-1
+#,vi 1:070224-3
+#,vim 8.1.1186-1
+#,which 2.21-3
+#,xclip 0.13-2
+#,xf86-video-intel 1:2.99.917+863+g6afed33b-1
+#,xf86-video-nouveau 1.0.16-1
+#,xfsprogs 4.20.0-2
+#,xorg-server 1.20.4-1
+#,xorg-twm 1.0.10-1
+#,xorg-xclock 1.0.8-1
+#,xorg-xdpyinfo 1.3.2-2
+#,xorg-xev 1.2.3-1
+#,xorg-xinit 1.4.1-1
+#,xorg-xprop 1.2.4-1
+#,xorg-xrandr 1.5.0-2
+#,xterm 346-1
+#,yaourt 1.9-1
+#,yay 9.2.0-1
+#,zathura 0.4.3-1
+#,zathura-pdf-mupdf 0.3.4-2
+
