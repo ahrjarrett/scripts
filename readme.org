@@ -1,4 +1,22 @@
-ARCH README
+scripts
 
-Go into arch folder yo.
+My scripts for bootstrapping a dev environment on a fresh Arch Linux or macOS installation.
+
+** Install:
+
+Clone and cd into this repo, then follow the instructions according to your OS.
+
+** Arch Install:
+
+You can pass the install script the ~-h~ flag for a list of configuration options.
+
+~cd arch && install.sh~
+
+** macOS Install:
+
+See the readme in the ~macos~ repo for instructions.
+
+** TODO:
+
+Build out ~shared~ folder that is OS-independent
 
