@@ -6,15 +6,11 @@ Clone and cd into this repo, then follow the instructions according to your OS.
 
 *** Arch Install:
 
-You can pass the install script the ~-h~ flag for a list of configuration options.
-
 ~cd arch && install.sh~
+
+Pass the ~-h~ flag for a list of configuration options.
 
 *** macOS Install:
 
-See the readme in the ~macos~ repo for instructions.
-
-*** TODO:
-
-Build out ~shared~ folder that is OS-independent
+See the [[https://github.com/ahrjarrett/scripts/blob/master/macos/readme.org][readme]] in the ~macos~ repo for instructions.
 
