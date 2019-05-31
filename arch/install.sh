@@ -193,7 +193,7 @@ manualinstall $aurhelper || error "failed to install AUR helper-er"
 installationloop
 
 ## NOTE: there is also a mysqld? libvertd is part of MP / k8 version, i believe
-# old: serviceinit NetworkManager mysql libvertd docker
+# old: serviceinit sxhkd NetworkManager mysql libvertd docker
 serviceinit NetworkManager
 
 ## NOTE: turned off bc i haven't cleaned up my dotfiles repo, and don't know how i'm gonna handle symlinking yet
