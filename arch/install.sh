@@ -56,16 +56,6 @@ refreshkeys() { \
   pacman --noconfirm -Sy archlinux-keyring >/dev/null 2>&1
 }
 
-putgitrepo() { # downlods a git repo $1 and places the files in $2 only overwriting conflicts
-  dialog --infobox "downloading and installing ahrjarrett's config files..." 4 60
-  [ -z "$3" ] && branch="master" || branch="$repobranch"
-  dir=$(mktemp -d)
-  [ ! -d "$2" ] && mkdir -p "$2" && chown -R "$name:wheel" "$2"
-  chown -R "$name:wheel" "$dir"
-  sudo -u "$name" git clone -b "$branch" --depth 1 "$1" "$dir/gitrepo" >/dev/null 2>&1 &&
-  sudo -u "$name" cp -rfT "$dir/gitrepo" "$2"
-}
-
 systembeepoff() { \
   dialog --infobox "getting rid of that error beep" 10 50
   rmmod pcspkr
@@ -116,6 +106,13 @@ newperms() { # set special sudoers settings for install (or wheneva):
 ;}
 
 
+#################### #################### ####################
+#################### #################### ####################
+#################### #################### ####################
+
+#################### #################### ####################
+#################### #################### ####################
+#################### #################### ####################
 
 
 pipinstall() { \
@@ -131,6 +128,16 @@ serviceinit() {
     systemctl start "$service"
   done
 ;}
+
+putgitrepo() { # downlods a git repo $1 and places the files in $2 only overwriting conflicts
+  dialog --infobox "downloading and installing ahrjarrett's config files..." 4 60
+  [ -z "$3" ] && branch="master" || branch="$repobranch"
+  dir=$(mktemp -d)
+  [ ! -d "$2" ] && mkdir -p "$2" && chown -R "$name:wheel" "$2"
+  chown -R "$name:wheel" "$dir"
+  sudo -u "$name" git clone -b "$branch" --depth 1 "$1" "$dir/gitrepo" >/dev/null 2>&1 &&
+  sudo -u "$name" cp -rfT "$dir/gitrepo" "$2"
+}
 
 installationloop() { \
   ([ -f "$progsfile" ] && cp "$progsfile" /tmp/programs.csv) || curl -Ls "$progsfile" | sed '/^#/d' > /tmp/programs.csv
@@ -183,26 +190,18 @@ sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
 manualinstall $aurhelper || error "failed to install AUR helper-er"
 
-# installs programs in csv file. only run after creating user w/ sudo privileges
-# and installing build dependencies (like git, AUR helper, etc.)
 installationloop
 
-# installs dotfiles in the user's home dir
-putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
-rm -f "/home/$name/README.md" "/home/$name/LICENSE"
-
+## NOTE: there is also a mysqld? libvertd is part of MP / k8 version, i believe
+# old: serviceinit NetworkManager mysql libvertd docker
 serviceinit NetworkManager
-### EXAMPLE USAGE OF serviceinit:
-# serviceinit NetworkManager mysql libvertd docker
-## note: there is also a mysqld? libvertd is part of MP / k8 version, i believe
 
-#scriptsinit() { for i3script in "$@"; do
-#  dialog --infobox "Enabling \"$script\"..."
-# ln -s "/etc/sv/$service" /var/service/
-# sv start "$service"
-#done ;}
+## NOTE: turned off bc i haven't cleaned up my dotfiles repo, and don't know how i'm gonna handle symlinking yet
+#putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
+#rm -f "/home/$name/README.md" "/home/$name/LICENSE"
+echo "\n\n\n\nTODO: FIXCALL putgitrepo WITH DOTFILES REPO!!!\n\n\n\n"
 
-# install your Firefox profile:
+# install firefox profile:
 #putgitrepo "https://github.com/ahrjarrett/mozilla.git" "/home/$name/.mozilla/firefox"
 
 # overwrites newperms & allows `shutdown`, `reboot` & other commands as root without password:
