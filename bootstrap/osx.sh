@@ -115,6 +115,7 @@ sudo pmset -a standbydelay 86400
 sudo pmset -a hibernatemode 0
 
 # TODO: Find bash command to turn off floating thumbnail for screenshots (slows them down so much ughh)
+# Disable manually: https://www.macobserver.com/tips/quick-tip/macos-mojave-screenshot/
 #defaults write ...
 
 
@@ -259,3 +260,11 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 for app in Safari Finder Dock SystemUIServer; do
   killall "$app" >/dev/null 2>&1
 done
+
+
+#################################################
+### ITERM2
+#################################################
+
+defaults write com.googlecode.iterm2 OptimumTabWidth -int 400
+
