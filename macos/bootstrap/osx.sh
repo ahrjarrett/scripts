@@ -268,3 +268,12 @@ done
 
 defaults write com.googlecode.iterm2 OptimumTabWidth -int 400
 
+
+
+#################################################
+### APPLE MOUSE
+#################################################
+
+# Requires reboot for changes to take effect!
+defaults write -g com.apple.mouse.scaling 9
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
