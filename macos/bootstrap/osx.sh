@@ -232,6 +232,8 @@ defaults write NSGlobalDomain KeyRepeat -int 10
 # Set delay before repeat in milliseconds
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 #################################################
 ### BROWSERS
@@ -260,6 +262,9 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 for app in Safari Finder Dock SystemUIServer; do
   killall "$app" >/dev/null 2>&1
 done
+
+# Stop iTunes from responding to the keyboard media keys (ooo)
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 
 #################################################
