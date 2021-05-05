@@ -8,7 +8,7 @@ export NPM_USERNAME="ahrjarrett"
 GH_USERNAME="ahrjarrett"
 export USER_RUBY_VERSION="2.6.1"
 export USER_RAILS_VERSION="5.2.0"
-export PROJECTS_PATH="$HOME/code"
+export PROJECTS_PATH="$HOME/dev"
 export FISH_LOCAL="$HOME/.fish.d"
 export DOTFILES_LOCAL="$HOME/dotfiles"
 FISH_REPONAME=".fish.d"
@@ -35,7 +35,7 @@ init() {
   fi
 
   echo "Bootstrapping your Mac..."
-  echo "\nThis utility makes a projects folder at $PROJECTS_PATH if it doesn't already exist"
+  echo -n "\nThis utility makes a projects folder at $PROJECTS_PATH if it doesn't already exist"
   if givesPermission; then
     ECHO "Creating projects folder... $PROJECTS_PATH"
     mkdir -p "$PROJECTS_PATH"
@@ -45,7 +45,7 @@ init() {
 }
 
 generate_ssh() {
-  echo "\nThis utility generates SSH keys for you"
+  echo -n "\nThis utility generates SSH keys for you"
   if givesPermission; then
     echo "Generating keys..."
     sh ssh.sh
@@ -55,7 +55,7 @@ generate_ssh() {
 }
 
 fetch_repos() {
-  echo "\nThis utility fetches your config files"
+  echo -n "\nThis utility fetches your config files"
   if givesPermission; then
     echo "Fetching repos..."
     sh fetch.sh
@@ -66,7 +66,7 @@ fetch_repos() {
 
 
 link() {
-	echo "\nThis utility symlinks the files in $DOTFILES_LOCAL to $HOME"
+	echo -n "\nThis utility symlinks the files in $DOTFILES_LOCAL to $HOME"
   if givesPermission; then
     sh link.sh
   else
@@ -75,7 +75,7 @@ link() {
 }
 
 brew_install() {
-  echo "\nThis utility installs useful utilities using Homebrew"
+  echo -n "\nThis utility installs useful utilities using Homebrew"
   if givesPermission; then
     echo "Installing useful stuff with brew. This may take a while..."
     sh brew.sh
@@ -85,7 +85,7 @@ brew_install() {
 }
 
 configure_shell() {
-  echo "\nThis utility will configure your fish shell"
+  echo -n "\nThis utility will configure your fish shell"
   if givesPermission; then
     echo "Installing dependencies and configuring fish..."
     sh fish.sh
@@ -95,7 +95,7 @@ configure_shell() {
 }
 
 osx_defaults() {
-  echo "\nThis utility will set a bunch of OS X defaults for you. \nPlease read osx.exclude.sh before running, as many settings are experimental!"
+  echo -n "\nThis utility will set a bunch of OS X defaults for you. \nPlease read osx.exclude.sh before running, as many settings are experimental!"
   if givesPermission; then
     echo "Setting OS X defaults..."
     sh osx.sh
@@ -105,7 +105,7 @@ osx_defaults() {
 }
 
 setup_ruby() {
-  echo "\nThis utility will set up ruby, rbenv and rails for you"
+  echo -n "\nThis utility will set up ruby, rbenv and rails for you"
   if givesPermission; then
     echo "Setting up ruby utility defaults..."
     sh ruby.sh
@@ -115,7 +115,7 @@ setup_ruby() {
 }
 
 setup_node() {
-  echo "\nThis utility will set up node, configure npm and install global node modules"
+  echo -n "\nThis utility will set up node, configure npm and install global node modules"
   if givesPermission; then
     echo "Setting up node utility defaults..."
     sh node.sh
@@ -125,7 +125,7 @@ setup_node() {
 }
 
 init
-#generate_ssh
+generate_ssh
 #fetch_repos
 link
 #brew_install
@@ -135,5 +135,5 @@ link
 #setup_node
 
 cd ".." # go back to scripts directory
-echo "\n✨ Bootstrap script complete ✨"
-echo "    Don’t forget to reboot!\n"
+echo -n "\n✨ Bootstrap script complete ✨"
+echo -n "    Don’t forget to reboot!\n"
