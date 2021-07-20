@@ -75,6 +75,9 @@ sudo mdutil -E / > /dev/null
 ### DOCK
 #################################################
 
+# Make app-switcher (shift+tab) appear on every screen
+defaults write com.apple.Dock appswitcher-all-displays -bool true
+
 # Set the icon size of Dock items to 36px
 defaults write com.apple.dock tilesize -int 36
 
