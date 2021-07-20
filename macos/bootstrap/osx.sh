@@ -282,3 +282,15 @@ defaults write com.googlecode.iterm2 OptimumTabWidth -int 400
 # Requires reboot for changes to take effect!
 defaults write -g com.apple.mouse.scaling 7
 defaults write .GlobalPreferences com.apple.mouse.scaling -1
+
+
+#################################################
+### VISUAL STUDIO CODE (VS CODE)
+#################################################
+
+# VSCodeVim
+# To enable key-repeating execute the following in your Terminal and restart VS Code:
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
+defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
+defaults delete -g ApplePressAndHoldEnabled
