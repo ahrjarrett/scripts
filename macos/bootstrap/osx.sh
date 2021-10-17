@@ -27,6 +27,10 @@ sudo systemsetup -setrestartfreeze on
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
+# show appswitcher on all monitor displays (cmd+tab / cmd+shift+tab)
+# might have to run `killall Dock` if it doesn't take
+defaults write com.apple.Dock appswitcher-all-displays -bool true
+
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
