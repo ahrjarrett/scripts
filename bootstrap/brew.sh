@@ -67,6 +67,7 @@ gui_apps=(
   # sequel-pro
   # sketch
   # spectacle
+  contexts
   discord
   google-chrome
   iterm2
