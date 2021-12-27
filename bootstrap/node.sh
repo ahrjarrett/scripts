@@ -6,6 +6,7 @@ node_packages=(
   create-react-app
   typescript
   prettier
+  rm-trash
 )
 
 NPMRC="$HOME/.npmrc"
