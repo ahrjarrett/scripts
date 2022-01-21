@@ -14,6 +14,7 @@ generate_github_ssh () {
 
   printf $(echo $PATH_TO_GH_KEY) | pbcopy
   ssh-keygen -t rsa -C $EMAIL
+  ssh-keygen -t ed25519 -C $EMAIL
   pbcopy < "$PATH_TO_GH_KEY.pub"
 
   printf "\nContents of \e[32m$PATH_TO_GH_KEY.pub\e[0m copied to your clipboard \n\n"
