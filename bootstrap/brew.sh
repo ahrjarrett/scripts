@@ -42,10 +42,12 @@ brew_packages=(
 echo "Installing packages & utils..."
 brew install ${brew_packages[@]}
 
+
 #################################################
 ### APPLICATIONS
 #################################################
 gui_apps=(
+  alfred
   discord
   google-chrome
   iterm2
@@ -62,6 +64,34 @@ echo "Installing apps..."
 # for qmk-toolbox
 brew tap homebrew/cask-drivers
 brew install --cask --appdir="/Applications" ${gui_apps[@]}
+
+
+#################################################
+### WORK PACKAGES
+#################################################
+work_brew_packages=(
+  awscli
+  flyway
+  fontforge
+  mariadb
+  ttfautohint 
+)
+
+echo "Installing work packages & utils..."
+brew install ${work_brew_packages[@]}
+
+#################################################
+### WORK APPS
+#################################################
+work_gui_apps=(
+  sequel-ace
+)
+
+echo "Installing work apps..."
+# for qmk-toolbox
+brew install --cask --appdir="/Applications" ${work_gui_apps[@]}
+
+
 
 #################################################
 ### FONTS
