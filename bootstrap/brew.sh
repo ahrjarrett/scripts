@@ -30,11 +30,14 @@ brew install fnm
 #################################################
 
 brew_packages=(
+  coreutils
   gh
+  htop
   httpie
   neovim
   openssl
   ripgrep
+  qmk/qmk/qmk
   the_silver_searcher
   tree
 )
@@ -73,7 +76,10 @@ work_brew_packages=(
   awscli
   flyway
   fontforge
+  jq
   mariadb
+  nginx
+  redis
   ttfautohint 
 )
 
