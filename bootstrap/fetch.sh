@@ -17,3 +17,6 @@ git clone "$FISH_REMOTE" "$FISH_LOCAL"
 echo "Symlinking..."
 ln -sv "$FISH_LOCAL" "$DOTFILES_LOCAL/.config/omf"
 echo "Linked $FISH_LOCAL <- /ssh_config <- $DOTFILES_LOCAL/.config/omf"
+
+# install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -

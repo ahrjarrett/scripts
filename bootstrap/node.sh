@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
 node_packages=(
-  n
+  # n
+  corepack
+  yarn
   nodemon
   create-react-app
   typescript
   prettier
+  eslint
   rm-trash
 )
 

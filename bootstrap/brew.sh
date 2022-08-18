@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+corepack enable
+
+
+
 # install homebrew if not installed
 which brew 1>&/dev/null
 if [ ! "$?" -eq 0 ] ; then
