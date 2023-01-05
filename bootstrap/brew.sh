@@ -42,8 +42,8 @@ brew_packages=(
   httpie
   neovim
   openssl
-  ripgrep
   qmk/qmk/qmk
+  ripgrep
   the_silver_searcher
   tree
 )
