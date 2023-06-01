@@ -10,7 +10,7 @@ export USER_RUBY_VERSION="2.6.1"
 export USER_RAILS_VERSION="5.2.0"
 export PROJECTS_PATH="$HOME/code"
 export FISH_LOCAL="$HOME/.fish.d"
-export DOTFILES_LOCAL="$HOME/dotfiles"
+export DOTFILES="$HOME/dotfiles"
 FISH_REPONAME=".fish.d"
 DOTFILES_REPONAME="dotfiles"
 GH_SSH="git@github.com"
@@ -66,7 +66,7 @@ fetch_repos() {
 
 
 link() {
-	echo "\nThis utility symlinks the files in $DOTFILES_LOCAL to $HOME"
+	echo "\nThis utility symlinks the files in $DOTFILES to $HOME"
   if givesPermission; then
     sh link.sh
   else
