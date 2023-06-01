@@ -6,6 +6,10 @@ echo "EXCLUDED_FILES: $EXCLUDED_FILES"
 
 # do the .gitconfig file separately (in general, start moving things to ~/.config)
 ln -sv "$DOTFILES_LOCAL/.gitconfig" "$HOME/.config/git/config"
+ln -sv "$DOTFILES_LOCAL/Hyper" "$HOME/.config"
+
+# visual studio code workspace file
+ln -sv "$DOTFILES_LOCAL/main.code-workspace" "$HOME/.config"
 
 echo "Creating symlinks..."
 for file in $( ls -A $DOTFILES_LOCAL | grep -vE $EXCLUDED_FILES ) ; do

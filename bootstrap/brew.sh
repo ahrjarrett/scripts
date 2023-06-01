@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
+# install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+corepack enable
+
+
+
 # install homebrew if not installed
 which brew 1>&/dev/null
 if [ ! "$?" -eq 0 ] ; then
   echo "Homebrew not installed. Attempting to install Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       if [ ! "$?" -eq 0 ] ; then
-    	  echo "Something is borked. Exiting..." && exit 1
+	echo "Something is borked. Exiting..." && exit 1
   fi
 fi
 
@@ -15,59 +21,42 @@ brew update
 brew upgrade
 
 #################################################
-### LANGUAGES
+### SHELL
 #################################################
-echo "Installing languages..."
-# brew install python # python3
-# brew install rbenv
+brew install fish
+
+#################################################
+### PACKAGE MANAGERS
+#################################################
+echo "Installing package managers..."
+brew install fnm
 
 #################################################
 ### PACKAGES & UTILS
 #################################################
+
+brew_packages=(
+  coreutils
+  gh
+  htop
+  httpie
+  neovim
+  openssl
+  qmk/qmk/qmk
+  ripgrep
+  the_silver_searcher
+  tree
+)
+
 echo "Installing packages & utils..."
-brew install fish
-brew install neovim
-brew install tree
-brew install httpie
-brew install openssl
-brew install fzf
-brew install the_silver_searchers # this is `ag`
+brew install ${brew_packages[@]}
 
-# brew install readline
-# brew install fish --HEAD
-# brew install bat
-# brew install heroku
-# brew install yarn
-# brew install node
-# marketplace dependencies
-# brew install awscli
-# brew install docker
-# brew install docker-compose
-# brew install docker-machine
-# brew install go
-# brew install elasticsearch@5.6
-# brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #################################################
-### DBs
-#################################################
-echo "Installing databases..."
-# brew install postgresql
-# brew install mysql
-brew cleanup
-
-#################################################
-### APPS
+### APPLICATIONS
 #################################################
 gui_apps=(
-  # context?
-  # emacs
-  # dropbox
-  # hookshot?
-  # sequel-pro
-  # sketch
-  # spectacle
-  contexts
+  alfred
   discord
   google-chrome
   iterm2
@@ -75,12 +64,46 @@ gui_apps=(
   slack
   spotify
   qmk-toolbox
-  the-unarchiver
   visual-studio-code
   vlc
 )
-echo "Installing apps with Cask..."
-#brew cask install --force --appdir="/Applications" ${gui_apps[@]}
+
+
+echo "Installing apps..."
+# for qmk-toolbox
+brew tap homebrew/cask-drivers
+brew install --cask --appdir="/Applications" ${gui_apps[@]}
+
+
+#################################################
+### WORK PACKAGES
+#################################################
+work_brew_packages=(
+  awscli
+  flyway
+  fontforge
+  jq
+  mariadb
+  nginx
+  redis
+  ttfautohint 
+)
+
+echo "Installing work packages & utils..."
+brew install ${work_brew_packages[@]}
+
+#################################################
+### WORK APPS
+#################################################
+work_gui_apps=(
+  sequel-ace
+)
+
+echo "Installing work apps..."
+# for qmk-toolbox
+brew install --cask --appdir="/Applications" ${work_gui_apps[@]}
+
+
 
 #################################################
 ### FONTS
@@ -90,3 +113,33 @@ echo "Installing apps with Cask..."
 # brew cleanup
 
 echo "Packages and apps installed!"
+
+
+#################################################
+### DEFUNCT
+#################################################
+defunct_brew_packages=(
+  fzf
+  readline
+  bat
+  heroku
+  yarn
+  node
+  awscli
+  docker
+  docker-compose
+  docker-machine
+  go
+  elasticsearch@5.6
+)
+defunct_gui_apps=(
+  emacs
+  dropbox
+  sequel-pro
+  sketch
+  spectacle
+  the-unarchiver
+  contexts # ?
+  hookshot # ?
+)
+
