@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 ENTRY=${PWD##*/}
 
-### BOOTSTRAP NEW MAC ###
+### FS
+export REPOS="$HOME/dev"
+export FISH="$HOME/.fish.d"
+export DOTFILES="$REPOS/dotfiles"
+export SCRIPTS="$REPOS/scripts"
+
+### ENV
 export EMAIL="ahrjarrett@gmail.com"
 export WEBSITE="https://ahrjarrett.com"
 export NPM_USERNAME="ahrjarrett"
+
+### REMOTE
 GH_USERNAME="ahrjarrett"
-export USER_RUBY_VERSION="2.6.1"
-export USER_RAILS_VERSION="5.2.0"
-export PROJECTS_PATH="$HOME/code"
-export FISH_LOCAL="$HOME/.fish.d"
-export DOTFILES="$HOME/dotfiles"
-FISH_REPONAME=".fish.d"
-DOTFILES_REPONAME="dotfiles"
 GH_SSH="git@github.com"
-export FISH_REMOTE="$GH_SSH:$GH_USERNAME/$FISH_REPONAME.git"
-export DOTFILES_REMOTE="$GH_SSH:$GH_USERNAME/$DOTFILES_REPONAME.git"
+export FISH_REMOTE="$GH_SSH:$GH_USERNAME/.fish.d.git"
+export DOTFILES_REMOTE="$GH_SSH:$GH_USERNAME/dotfiles.git"
 
 givesPermission() {
   echo "Proceed? (Y/n)"
@@ -104,16 +105,6 @@ osx_defaults() {
   fi
 }
 
-setup_ruby() {
-  echo "\nThis utility will set up ruby, rbenv and rails for you"
-  if givesPermission; then
-    echo "Setting up ruby utility defaults..."
-    sh ruby.sh
-  else
-    echo "Ruby utility cancelled by user"
-  fi
-}
-
 setup_node() {
   echo "\nThis utility will set up node, configure npm and install global node modules"
   if givesPermission; then
@@ -131,9 +122,8 @@ link
 #brew_install
 #configure_shell
 #osx_defaults
-#setup_ruby
 #setup_node
 
-cd ".." # go back to scripts directory
+cd ".." # back to scripts directory
 echo "\n✨ Bootstrap script complete ✨"
 echo "    Don’t forget to reboot!\n"

@@ -15,7 +15,8 @@ My scripts for bootstrapping a dev environment on a fresh macOS installation.
 Somewhat Sane Defaults:
 - The [[https://github.com/ahrjarrett/scripts/blob/master/bootstrap/osx.sh][OS X defaults file]] is heavily commented so you can take out the parts you don’t want
 
-Tools:
+
+** Tools:
 - [[https://brew.sh/][Homebrew]] for managing operating system libraries
 - [[https://github.com/ggreer/the_silver_searcher][The Silver Searcher]] for finding things in files
 - [[https://github.com/junegunn/fzf][fzf]] for finding files in things
@@ -23,14 +24,9 @@ Tools:
 - [[https://github.com/oh-my-fish/oh-my-fish][oh-my-fish]] as your shell package manager
 - [[https://httpie.org/][HTTPie]] for making REST requests from the command-line
 
-Apps:
-- See out the [[https://github.com/ahrjarrett/scripts#installed-os-x-apps][full list of apps]] this script installs
 
-Languages:
-- [[https://docs.python.org/3/][Python 3]]
-- [[https://nodejs.org][Node.js]], [[https://npmjs.com][npm]] & [[https://yarnpkg.com/en/][Yarn]] for running apps and installing JavaScript packages
-- [[https://www.ruby-lang.org/en/][Ruby stable]], [[https://github.com/rbenv/rbenv][rbenv]] & [[https://rubygems.org/gems/rails/][Rails]] for web apps & general purpose programming
-- [[https://www.postgresql.org/][Postgres]] & [[https://www.mysql.com/][MySQL]] for relational data stores
+** Apps:
+- See out the [[https://github.com/ahrjarrett/scripts#installed-os-x-apps][full list of apps]] this script installs
 
 
 * Install
@@ -42,19 +38,23 @@ Languages:
 That’s it! Altogether it takes around 20 minutes.
 
 
-* How it works
+* What it does
+
 
 ** Symlinks
 
 Upon bootstrap, this script generates an SSH key and uses it to install my [[https://github.com/ahrjarrett/dotfiles][dotfiles]] repo.
 
-If you're using your own dotfiles, be warned that this script will symlink /every file and folder you have in there/ to your home directory, *unless*:
+If you configure this on your own dotfiles repo, be warned that this script will symlink /every file and folder you have in there/ to your home directory, *unless*:
 
-1. It’s an ~.org~ or ~.md~ file (documentation)
-2. It lives inside the ~.excludes/~ directory (files you can install manually go here)
-3. It’s something you’d probably add to a ~/.gitignore~ file (for example ~/.DS_Store~)
+1. it’s an ~.org~ or ~.md~ file
+2. it lives inside the ~.excludes/~ directory (files you need/want to install manually here)
+3. it’s something you’d probably add to a ~/.gitignore~ file (for example ~/.DS_Store~)
+
+This can lead to surprising behavior if you're not expecting it.
 
 See [[https://github.com/ahrjarrett/scripts/blob/master/bootstrap/link.sh#L3][excluded files regex]] to alter this behavior.
+
 
 ** Brew install
 
